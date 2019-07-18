@@ -9,3 +9,7 @@ class LoginPageLocators(object):
 
 class ProductPageLocators(object):
     BASKET_BUTTON = (By.CSS_SELECTOR, "#add_to_basket_form>button.btn-add-to-basket")
+    EXPECTED_PRODUCT_NAME = (By.CSS_SELECTOR, ".product_main > h1")
+    REAL_PRODUCT_NAME = (By.CSS_SELECTOR, "#messages > .alert-success > .alertinner > strong")
+    EXPECTED_PRICE = (By.CSS_SELECTOR, ".product_main > .price_color")
+    REAL_PRICE = (By.CSS_SELECTOR, "#messages > .alert-info > .alertinner > p > strong")
