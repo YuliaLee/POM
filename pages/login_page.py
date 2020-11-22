@@ -21,5 +21,4 @@ class LoginPage(BasePage):
         self.browser.find_element(*LoginPageLocators.EMAIL).send_keys(email), "Email input is not presented"
         self.browser.find_element(*LoginPageLocators.PASSWORD_FIRST).send_keys(password), "Password first input is not presented"
         self.browser.find_element(*LoginPageLocators.PASSWORD_SECOND).send_keys(password), "Password second input is not presented"
-
         self.browser.find_element(*LoginPageLocators.REGISTRATION_BUTTON).click(), "Registration button is not presented"

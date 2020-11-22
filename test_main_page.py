@@ -9,11 +9,12 @@ import pytest
 class TestLoginFromMainPage(object):
     def test_guest_can_go_to_login_page(self, browser):
         link = "http://selenium1py.pythonanywhere.com"
-        page = MainPage(browser, link)                          # инициализируем Page Object, передаем в конструктор экземпляр драйвера и url адрес
-        page.open()                                             # открываем страницу
-        page.go_to_login_page()                                 # выполняем метод страницы - переходим на страницу логина
-        login_page = LoginPage(browser, browser.current_url)    # инициализируем Page Object, передаем в конструктор экземпляр драйвера и url адрес
-        login_page.should_be_login_page()                       # выполняем метод страницы - проверяем, корректна ли она
+        page = MainPage(browser, link)                          # initializing the Page Object, passing the driver instance and url to the constructor
+        page.open()                                             # page opening
+        page.go_to_login_page()                                 # executing the page method - go to the login page
+        login_page = LoginPage(browser, browser.current_url)    # initializing the Page Object, passing the driver instance and url to the constructor
+        login_page.should_be_login_page()                       # executing the page method - check, if it's the login page
+
 
     def test_guest_should_see_login_link(self, browser):
         link = "http://selenium1py.pythonanywhere.com/"
@@ -24,9 +25,9 @@ class TestLoginFromMainPage(object):
 
 def test_guest_cant_see_product_in_cart_opened_from_main_page(browser):
     link = "http://selenium1py.pythonanywhere.com"
-    page = MainPage(browser, link)                          # инициализируем Page Object, передаем в конструктор экземпляр драйвера и url адрес
-    page.open()                                             # открываем страницу
-    page.go_to_basket_page()                                # переходим в корзину
-    cart_page = CartPage(browser, browser.current_url)      # инициализируем Page Object, передаем в конструктор экземпляр драйвера и url адрес
-    cart_page.should_be_empty_cart()                        # проверяем, что карзина пуста
-    cart_page.should_be_empty_cart_text()                   # проверяем, что есть текст о пустой корзине
+    page = MainPage(browser, link)                          # initializing the Page Object, passing the driver instance and url to the constructor
+    page.open()                                             # page opening
+    page.go_to_basket_page()                                # go to the basket page
+    cart_page = CartPage(browser, browser.current_url)      # initializing the Page Object, passing the driver instance and url to the constructor
+    cart_page.should_be_empty_cart()                        # check, if the basket is empty
+    cart_page.should_be_empty_cart_text()                   # check, there is empty basket text
